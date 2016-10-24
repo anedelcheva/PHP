@@ -2,7 +2,7 @@
 
 Информацията за курсовете се пази в следния масив:
 
-[!task1 HW2](https://cloud.githubusercontent.com/assets/8988578/19660965/8e469862-9a3a-11e6-8660-6707de5bd05f.png)
+![task1 HW2](https://cloud.githubusercontent.com/assets/8988578/19660965/8e469862-9a3a-11e6-8660-6707de5bd05f.png)
 
 Пример, следното извикване:
 
