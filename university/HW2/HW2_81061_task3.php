@@ -3,29 +3,30 @@
 <?php
 class Request
 {
-	//function __construct($_SERVER)
-	//{
-		
-	//}
+	protected $server;
+	function __construct($server)
+	{
+		$this->server = $server;
+	}
 	
 	function getMethod()
 	{
-		return strtolower($_SERVER['REQUEST_METHOD']);
+		return strtolower($this->server['REQUEST_METHOD']);
 	}
 	
 	function getPath()
 	{
-		return $_SERVER['PHP_SELF'];
+		return $this->server['PHP_SELF'];
 	}
 	
 	function getURL()
 	{
-		return "http://".$_SERVER["HTTP_HOST"].$_SERVER["PHP_SELF"];
+		return "http://".$this->server["HTTP_HOST"].$this->server["PHP_SELF"];
 	}
 	
 	function getUserAgent()
 	{
-		return $_SERVER["HTTP_USER_AGENT"];
+		return $this->server["HTTP_USER_AGENT"];
 	}
 }
 	
@@ -33,7 +34,7 @@ class GetRequest extends Request
 {
 	function getData()
 	{
-		$query_string = $_SERVER["QUERY_STRING"];
+		$query_string = $this->server["QUERY_STRING"];
 		//$query_string = "a=1&b=2&c=3";
 		$query_string = str_replace("=", ":", $query_string);
 		$query_string = str_replace("&", ",", $query_string);
@@ -52,7 +53,7 @@ class GetRequest extends Request
 	}
 }
 
-$request = new GetRequest();
+$request = new GetRequest($_SERVER);
 echo $request->getMethod()."<br>";
 echo $request->getPath()."<br>";
 echo $request->getURL()."<br>";
