@@ -19,7 +19,7 @@
 	</select>
 	<br/><br/>
 	Кредити:
-	<input type="number" name="credits" min="0.5" step="0.5" required>
+	<input type="number" name="credits" min="0.5" step="0.5" max="10" required>
 	<br/><br/>
 	<input type="submit" value="Добави">
 </form>
