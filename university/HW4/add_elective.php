@@ -41,13 +41,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		echo '</ul>';
 	}
 	else {
-		$add_column_created_at = "ALTER TABLE `electives` 
-								  ADD `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP 
-								  AFTER `lecturer`;";
+		$add_column_created_at = 
+		"ALTER TABLE `electives` 
+		ADD `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP 
+		AFTER `lecturer`;";
 		$conn->query($add_column_created_at);
-		$insertElectiveQuery = $conn->prepare("INSERT INTO 
-											`electives`(`title`, `description`, `lecturer`) 
-											VALUES (:subject, :description, :lecturer)");
+		$insertElectiveQuery = 
+		$conn->prepare("INSERT INTO 
+		electives`(`title`, `description`, `lecturer`) 
+		VALUES (:subject, :description, :lecturer)");
 		$insertElectiveQuery->bindParam(':subject', $subject);
 		$insertElectiveQuery->bindParam(':description', $description);
 		$insertElectiveQuery->bindParam(':lecturer', $lecturer);
