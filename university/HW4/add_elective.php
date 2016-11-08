@@ -21,10 +21,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$errors = array();
 	if(empty($subject))
 		array_push($errors, "Subject is required");
+	elseif(strlen($subject) > 150)
+		array_push($errors, "Subject should be fewer than 150 symbols");
+		
 	if(empty($lecturer))
 		array_push($errors, "Lecturer is required");
+	elseif(strlen($lecturer) > 200)
+		array_push($errors, "Lecturer should be fewer than 200 symbols");
+	
 	if(empty($description))
 		array_push($errors, "Description is required");
+	elseif(strlen($description) < 10)
+		array_push($errors, "Description should be at least 10 symbols");
+	
 	if (count($errors) > 0) {
 		echo '<ul style="color: red;">';
 		foreach ($errors as $error)
@@ -49,7 +58,7 @@ function modify_input($data) {
 	return $data;
 }
 ?>
-<form action="add_elective.php" method="post">
+<form action="add_elective.php" method="POST">
 	Име на предмета:<br/>
 	<input type="text" name="subject" size="40" autofocus>
 	<br/><br/>
