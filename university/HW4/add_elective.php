@@ -47,8 +47,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		AFTER `lecturer`;";
 		$conn->query($add_column_created_at);
 		$insertElectiveQuery = 
-		$conn->prepare("INSERT INTO 
-		electives`(`title`, `description`, `lecturer`) 
+		$conn->prepare("INSERT INTO `electives`
+		(`title`, `description`, `lecturer`) 
 		VALUES (:subject, :description, :lecturer)");
 		$insertElectiveQuery->bindParam(':subject', $subject);
 		$insertElectiveQuery->bindParam(':description', $description);
