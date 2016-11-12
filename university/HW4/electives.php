@@ -22,7 +22,9 @@ $elective_with_id_query = "SELECT title, description, lecturer FROM electives WH
 $elective_with_id = $conn->prepare($elective_with_id_query);
 $elective_with_id->bindParam(":id", $id);
 $elective_with_id->execute();
+<<<<<<< HEAD
 $title = $lecturer = $description = $id_db = "";
+>>>>>>> 1ca20a61db8a65ce15a3290fb81f67848fb85205
 if($elective_with_id->rowCount() > 0)
 {
 	$elective = $elective_with_id->fetch(PDO::FETCH_ASSOC);
@@ -40,7 +42,9 @@ function modify_input($data) {
 // validation
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
+<<<<<<< HEAD
 	$id_db = modify_input($_POST["id"]);
+>>>>>>> 1ca20a61db8a65ce15a3290fb81f67848fb85205
 	$title = modify_input($_POST["title"]);
 	$lecturer = modify_input($_POST["lecturer"]);
 	$description = modify_input($_POST["description"]);
@@ -66,12 +70,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			echo "<li>$error</li>";
 		echo "</ul>";
 	} else {
+<<<<<<< HEAD
 		$insert_elective_query = "UPDATE electives SET title = :title, description = :description, lecturer = :lecturer WHERE id = :id";
+>>>>>>> 1ca20a61db8a65ce15a3290fb81f67848fb85205
 		$insert_elective = $conn->prepare($insert_elective_query);
 		$insert_elective->bindParam(":title", $title);
 		$insert_elective->bindParam(":description", $description);
 		$insert_elective->bindParam(":lecturer", $lecturer);
+<<<<<<< HEAD
 		$insert_elective->bindParam(":id", $id_db);
+>>>>>>> 1ca20a61db8a65ce15a3290fb81f67848fb85205
 		$insert_elective->execute();
 		header("Location:electives.php");
 	}
@@ -79,7 +87,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!--form for editing elective in database-->
 <form action="electives.php" method="POST">
+<<<<<<< HEAD
 <input type="hidden" name="id" value="<?php echo $id; ?>"/>
+>>>>>>> 1ca20a61db8a65ce15a3290fb81f67848fb85205
 Име на предмета:<br>
 <input type="text" name="title" value="<?php echo $title; ?>" autofocus/>
 <br><br>
