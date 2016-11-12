@@ -66,13 +66,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			echo "<li>$error</li>";
 		echo "</ul>";
 	} else {
-		$insert_elective_query = "UPDATE electives SET title = :title, description = :description, lecturer = :lecturer WHERE id = :id";
-		$insert_elective = $conn->prepare($insert_elective_query);
-		$insert_elective->bindParam(":title", $title);
-		$insert_elective->bindParam(":description", $description);
-		$insert_elective->bindParam(":lecturer", $lecturer);
-		$insert_elective->bindParam(":id", $id_db);
-		$insert_elective->execute();
+		$update_elective_query = "UPDATE electives SET title = :title, description = :description, lecturer = :lecturer WHERE id = :id";
+		$update_elective = $conn->prepare($update_elective_query);
+		$update_elective->bindParam(":title", $title);
+		$update_elective->bindParam(":description", $description);
+		$update_elective->bindParam(":lecturer", $lecturer);
+		$update_elective->bindParam(":id", $id_db);
+		$update_elective->execute();
 		header("Location:electives.php");
 	}
 }
