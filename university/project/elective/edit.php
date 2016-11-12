@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+<title>Edit elective</title>
+</head>
 <body>
 <?php
 // 1. Get the elective with the id from query string
