@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Edit elective</title>
-</head>
 <body>
 <?php
 // 1. Get the elective with the id from query string
@@ -21,9 +18,7 @@ try {
 }
 
 // 3. Get elective from the database with the id in the query string
-$elective_with_id_query = 
-"SELECT title, description, lecturer 
-FROM electives WHERE id=:id";
+$elective_with_id_query = "SELECT title, description, lecturer FROM electives WHERE id=:id";
 $elective_with_id = $conn->prepare($elective_with_id_query);
 $elective_with_id->bindParam(":id", $id);
 $elective_with_id->execute();
@@ -42,8 +37,8 @@ function modify_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-
 // validation
+
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$title = modify_input($_POST["title"]);
 	$lecturer = modify_input($_POST["lecturer"]);
@@ -70,9 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			echo "<li>$error</li>";
 		echo "</ul>";
 	} else {
-		$insert_elective_query = 
-		"UPDATE electives 
-		SET title=:title, description=:description, lecturer=:lecturer";
+		$insert_elective_query = "UPDATE electives SET title=:title, description=:description, lecturer=:lecturer";
 		$insert_elective = $conn->prepare($insert_elective_query);
 		$insert_elective->bindParam(":title", $title);
 		$insert_elective->bindParam(":description", $description);
