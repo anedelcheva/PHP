@@ -1,0 +1,40 @@
+ul {
+	list-style-type: none;
+}
+
+h1 {
+	color: #97BF0E
+}
+
+li {
+	color: #8B8B8B;
+	font-family: verdana;
+}
+
+#webgl {
+	background-color: #97BF0E;
+	color: white;
+}
+
+button {
+	border-radius: 10px;
+	border: none;
+	padding: 5px 10px;
+}
+
+#reject {
+	background-color: white;
+	/*bolder-style: solid;*/
+	color: #BBD561;
+	border: 1px solid #BBD561;
+}
+
+.vili {
+	color: #2594E8;
+	/*#269DEB #549CEA*/
+}
+
+.greenbtn {
+	background-color: #97BF0E;
+	color: white;
+}
