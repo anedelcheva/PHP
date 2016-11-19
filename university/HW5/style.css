@@ -50,7 +50,6 @@ textarea {
 }
 
 #comments {
-	/*border: 1px solid coral;*/
 	display: inline-block;
 	position: absolute;
 	top: 390px;
@@ -67,7 +66,6 @@ textarea {
 }
 
 #buttons {
-	/*border: 1px solid green;*/
 	position: absolute;
 	left: 1030px;
 	top: 15px;
@@ -76,7 +74,6 @@ textarea {
 #description {
 	position: relative;
 	left: 175px;
-	/*border: 1px solid purple;*/
 	display: inline-block;
 	width: 675px;
 	top: 15px;
