@@ -49,17 +49,6 @@ textarea {
 	margin-bottom: 5px;
 }
 
-<<<<<<< HEAD
-=======
-#comments {
-	display: inline-block;
-	position: absolute;
-	top: 390px;
-	left: 516px;
-	width: 675px;
-}
-
->>>>>>> 78b72e174e5359a946ac4dc095134b88870b9fbc
 #electives {
 	float: left;
 	position: relative;
@@ -74,11 +63,7 @@ textarea {
 	top: 15px;
 }
 
-<<<<<<< HEAD
 #wrapper {
-=======
-#description {
->>>>>>> 78b72e174e5359a946ac4dc095134b88870b9fbc
 	position: relative;
 	left: 175px;
 	display: inline-block;
