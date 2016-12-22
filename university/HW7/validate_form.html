@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validate form</title>
+	<style type="text/css">
+        .error {
+            color:  red;
+        }
+    </style>
+</head>
+
+<body>
+<form>
+
+	<b>Title:</b><br/>
+	<input type="text" name="title">
+	<br/><br/>
+	
+	<b>Description:</b><br/>
+	<textarea id="description" name="description"></textarea>
+	<br/><br/>
+	
+	<b>Lecturer:</b><br/>
+	<input type="text" name="lecturer">
+	<br/><br/>
+	
+	<b>Type:</b><br/>
+	<input type="radio" name="type" value="elective" checked> Elective<br/>
+	<input type="radio" name="type" value="mandatory"> Mandatory
+	<br/><br/>
+
+	
+	<b>Program:</b><br/>
+	<input type="radio" name="program" value="bachelor" onclick="selectProgram('bachelor');" checked> Bachelor<br/>
+	<input type="radio" name="program" value="master" onclick="selectProgram('master');"> Master
+	<br/><br/>
+
+	<b>Course:</b>
+	<select id="bachelor_courses">
+		<option value="0">0</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+	</select>
+	
+	<select id="master_courses" style="display: none">
+		<option value="0">0</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+	</select>
+	
+	<br><br>
+	<b>Lecturer's email:</b><br/>
+	<input type="text" name="email" placeholder="me@example.com">
+	<br/><br/>
+
+	<input type="submit" value="Create">
+</form>
+
+<script type="text/javascript">
+
+	// shows Course dropdown depending on whether the course is for a bachelor or for a master
+	// shows 0, 1, 2, 3, 4 for bachelor and 0, 1, 2 for master
+	function selectProgram(program) {
+		if(program == "master") {
+			document.getElementById("master_courses").style["display"] = "inline-block";
+			document.getElementById("bachelor_courses").style["display"] = "none";
+		}
+		
+		if(program == "bachelor") {
+			document.getElementById("master_courses").style["display"] = "none";
+			document.getElementById("bachelor_courses").style["display"] = "inline-block";
+		}
+	}
+	
+	// we get all elements with tag form
+	var forms = document.getElementsByTagName('form');
+	// we take the 0-th form
+	var form = forms[0];
+	// we add an event listener 'submit' and when this event 
+	// happens the onFormSubmit function is executed
+	form.addEventListener('submit', onFormSubmit);
+	
+	function getDataFromForm(form) {
+		var childs = form.childNodes; // we take all children of form (all tags whose parent is form)
+		var data = {}; // contains all values of input text field with attribute 'name'
+		childs.forEach(function(child) {
+			if (child.name)
+				data[child.name] = child.value;
+		});
+		return data;
+	}
+	
+	function titleValidator(form_params) {
+		var title = form_params.title;
+		if (title) {
+			if (title.length > 20) {
+				return {
+					'key': 'title',
+					'description': 'Title cannot be more than 20 symbols.'
+				}
+			} else {
+				return;
+			}
+		} else {
+			return {
+				'key': 'title',
+				'description': 'Title is required.'
+			};
+		}
+	}
+	
+	function emailValidator(form_params) {
+		var email = form_params.email;
+		if(email) {
+			var pattern= /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+			if (!pattern.test(email)) {
+				return {
+						'key': 'email',
+						'description': 'Email is invalid!'
+				}
+			}
+			else
+				return;
+		}
+		else
+			return;
+	}
+	
+	function descriptionValidator(form_params) {
+		var description = form_params.description;
+		if (description) {
+			if (description.length > 200) {
+				return {
+					'key': 'description',
+					'description': 'Description cannot be more than 200 symbols.'
+				}
+			} else
+				return;
+		} else {
+			return {
+				'key': 'description',
+				'description': 'Description is required.'
+			};
+		}
+	}
+	
+	function lecturerValidator(form_params) {
+		var lecturer = form_params.lecturer;
+		if (lecturer) {
+			if (lecturer.length > 20) {
+				return {
+					'key': 'lecturer',
+					'description': 'Lecturer name cannot be more than 20 symbols.'
+				}
+			} else {
+				return;
+			}
+		} else {
+			return {
+				'key': 'lecturer',
+				'description': 'Lecturer is required.'
+			};
+		}
+	}
+	
+	function validateForm(form_params) {
+		var errors = {};
+		var validators = [
+			titleValidator,
+			emailValidator,
+			descriptionValidator,
+			lecturerValidator
+		];
+		for (var i = 0; i < validators.length; i++) {
+			// calls all validators (titleValidator, emailValidator, descriptionValidator, lecturerValidator)
+			// on form_params
+			var error = validators[i](form_params); 
+			if (error) // if there is an error it assigns its description to the name of the input field
+				errors[error.key] = error.description;
+		}
+		return errors;
+	}
+	
+	function displayError(elementName, error) {
+		var element = document.getElementsByName(elementName)[0];
+		// creates dynamically a paragraph containing the error after a field with incorrect input
+		element.insertAdjacentHTML('afterend', '<p class="error">' + error + '</p>'); 
+	}
+	
+	function displayErrors(errors) {
+		for (var name in errors)
+			displayError(name, errors[name]);
+	}
+	
+	function onSuccess() {
+		alert('The form is correct');
+	}
+	
+	function onFormSubmit(event) {
+		event.preventDefault(); // prevents default action from occurring
+		var form = event.target; // gets the element that triggered a specific event
+		var data = getDataFromForm(form); // data contsins all input fields
+		var errors = validateForm(data); // errors contains all errors from input fields
+		if (!(Object.keys(errors).length === 0 && errors.constructor === Object))
+			displayErrors(errors);
+		else
+			onSuccess(); // displays 'The form is correct'
+	}
+</script>
+
+</body>
+</html>
