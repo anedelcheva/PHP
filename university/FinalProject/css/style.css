@@ -1,0 +1,111 @@
+ul {
+	list-style-type: none;
+}
+
+li {
+	color: #8B8B8B;
+	font-family: arial;
+	font-size: 85%;
+	padding: 9px 10px;
+	border-bottom: 1px solid #C3C3C3;
+
+}
+
+h1 {
+	color: #97BF0E;
+	font-family: arial;
+	font-size: 150%;
+	padding: 10px;
+	padding-left: 0px;
+	border-bottom: 1px solid #C3C3C3;
+}
+
+h2 {
+	font-family: arial;
+	font-weight: normal;
+	font-size: 125%;
+}
+
+p {
+	font-family: arial;
+	font-size: 85%;
+}
+
+button {
+	border-radius: 8px;
+	border: none;
+	padding: 5px 10px;
+}
+
+textarea {
+	resize: none;
+	overflow: auto;
+	width: 653px;
+	height: 60px;
+	border-radius: 5px;
+	padding: 10px;
+	border-color: #A9A9A9;
+	color: #A9A9A9;
+	margin-bottom: 5px;
+}
+
+#electives {
+	float: left;
+	position: relative;
+	left: 158px;
+	top: 27px;
+	width: 333px;
+}
+
+#buttons {
+	position: absolute;
+	left: 1030px;
+	top: 15px;
+}
+
+div#wrapper {
+	position: absolute;
+	margin-top: 2%;
+	margin-left: 25%;
+	width: 50%;
+}
+
+#webgl {
+	background-color: #97BF0E;
+	color: white;
+}
+
+#reject {
+	background-color: white;
+	color: #BBD561;
+	border: 1px solid #BBD561;
+}
+
+#registration {
+	margin-left: 10px;
+}
+
+.vili {
+	color: #2594E8;
+}
+
+.date {
+	font-family: console;
+	font-size: 70%;
+}
+
+.greenbtn {
+	background-color: #97BF0E;
+	color: white;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.comment {
+	border-bottom: 1px solid #C3C3C3;
+	padding-bottom: 20px;
+	padding-left: 4px;
+	margin-bottom: -7px;
+}

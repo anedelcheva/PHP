@@ -1,0 +1,420 @@
+ul {
+	list-style-type: none;
+	padding: 10px;
+	margin: 0px;
+	width: 360px;
+	padding-bottom: 0px;
+	margin-left: 2%;
+}
+
+ul.login_pass {
+	height: 155px;
+}
+
+ul.login {
+	height: 155px;
+	list-style-type: none;
+	padding: 10px;
+	margin: 0px;
+	width: 360px;
+	padding-bottom: 0px;
+}
+
+ul.add_lecturer {
+	height: 100px;
+}
+
+ul.add_lecturer select {
+	margin-left: 70px;
+	margin-bottom: 5px;
+}
+
+ul#edit_lecturer {
+	height: 206px;
+}
+
+ul.add_user {
+	height: 240px;
+	list-style-type: none;
+	padding: 10px;
+	margin: 0px;
+	width: 360px;
+	padding-bottom: 0px;
+	margin-left: 2%;
+}
+
+ul.register {
+	height: 257px;
+	list-style-type: none;
+	padding: 10px;
+	margin: 0px;
+	width: 360px;
+	padding-bottom: 0px;
+}
+
+#lecturers th, #electives th, #lecturers_electives th {
+	padding-top: 11px;
+	padding-bottom: 11px;
+	background-color: #97BF0D;
+	color: white;
+}
+
+#lecturers td, #lecturers th , #lecturers tr, #electives td, 
+#electives th, #electives tr, #lecturers_electives td, 
+#lecturers_electives th, #lecturers_electives tr{
+	border: 1px solid #ddd;
+	text-align: -internal-center;
+	text-align: center;
+	padding: 8px;
+	font-family: Arial;
+}
+
+#lecturers_electives td {
+	width: 50%;
+}
+
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+th {
+    font-weight: bold;
+}
+
+table#lecturers {
+    font-size: 16px;
+    border-collapse: collapse;
+	position: absolute;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-left: 25%;
+	overflow: auto;
+}
+
+table#electives {
+	font-size: 16px;
+    border-collapse: collapse;
+	position: absolute;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-left: 15%;
+	width: 70%;
+	overflow: auto;
+}
+
+table#lecturers_electives {
+	font-size: 16px;
+    border-collapse: collapse;
+	position: absolute;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-left: 25%;
+	width: 50%;
+	overflow: auto;
+}
+
+div#header_login {
+	margin-left: 93%;
+	margin-top: 1.5%;
+}
+
+div#header_register {
+	margin-left: 89%;
+	margin-top: 1.5%;
+}
+
+#publish_btn {
+	border: 1px solid #97BF0D;
+	padding: 5px;
+	text-decoration: none;
+	color: white;
+	background-color: #97BF0D;
+	font-weight: bold;
+	font-family: Arial;
+	font-size: 16px;
+	margin: 0px;
+	width: 120px;
+}
+
+a#href_btn {
+	border: 1px solid #97BF0D;
+	padding: 5px;
+	text-decoration: none;
+	color: white;
+	background-color: #97BF0D;
+	font-weight: bold;
+	font-family: Arial;
+	margin: 10px;
+	margin-top: 1.5%;
+}
+
+/*a:visited {
+	text-decoration: none;
+}*/
+
+a:link {
+	text-decoration: none;
+}
+
+a.delete {
+	color: red;
+}
+
+a.delete:hover, a.edit:hover, a.add_lecturer:hover, a.details:hover {
+	text-decoration: underline;
+}
+
+a.edit {
+	color: #FF9500;
+}
+
+a.add_lecturer {
+	color: blue;
+}
+
+a.details {
+	color: #97BF0D;
+	font-weight: bold;
+}
+
+a#href_btn:hover, #publish_btn:hover {
+	background-color: white;
+	color: #97BF0D;
+}
+
+div#tooltip {
+	position: absolute;
+	display: none;
+	border: 1px solid #999;
+	background-color: #fff;
+	color: #5AB034;
+	padding: 5px;
+}
+
+li {
+	padding: 8px;
+	padding-right: 0px;
+}
+
+input {
+	width: 310px;
+	height: 30px;
+	margin-left: 4px;
+	padding-left: 8px;
+	padding-right: 8px;
+	border: 1px solid #C3C3C3;
+}
+
+div.login_pass {
+	position: absolute;
+	margin-top: 15%;
+	margin-left: 36.5%;
+}
+
+div.register_lecturer {
+	position: absolute;
+	margin-top: 13%;
+	margin-left: 36.5%;
+}
+
+/*div#form_wrapper {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}*/
+
+div#elective_wrapper {
+	position: absolute;
+	margin-top: 8%;
+	margin-left: 37%;
+}
+
+div#registration_messages {
+	position: absolute;
+	margin-top: 35%;
+	margin-left: 36.5%;
+	width: 370px;
+	text-align: center;
+}
+
+div#elective_messages {
+	position: absolute;
+	margin-top: 40%;
+	margin-left: 37%;
+	width: 370px;
+	text-align: center;
+}
+
+p.form_electives {
+	margin: 5px;
+	background-color: #F5F5F0; 
+	color: red; 
+}
+
+div#login_messages {
+	position: absolute;
+	margin-top: 30%;
+	margin-left: 36.5%;
+	width: 370px;
+	text-align: center;
+}
+
+form.general {
+	background-color: #F5F5F0;
+	/*width: 93%;*/
+	width: 370px;
+	border: 1px solid #717172;
+	border-top: none;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+#email_exists {
+	background-color: #F5F5F0;
+	color: red;
+}
+
+.green_p {
+	font-family: arial;
+	background-color: #97BF0D;
+	text-align: center;
+	color: white;
+	font-size: 90%;
+	font-weight: bold;
+	padding: 13px;
+	margin: 0px;
+	
+	/*width: 86.7%;*/
+}
+
+p.form_validation {
+	background-color: #F5F5F0; 
+	color: red; 
+}
+
+ul.register #btn, ul.login #btn {
+	background-color: #97BF0D;
+	color: white;
+	border: 0px;
+	/*width: 328px;*/
+	width: 93%;
+	height: 30px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+ul.add_user #btn, ul.login_pass #btn, #edit_lecturer #btn, ul.add_lecturer #btn {
+	background-color: #97BF0D;
+	color: white;
+	border: 0px;
+	/*width: 328px;*/
+	width: 88%;
+	height: 30px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+div#header_logout {
+	margin-left: 75%;
+	margin-top: 1.5%;
+}
+
+div#header_options {
+	float: left;
+	width: 70%;
+	margin-left: 2%;
+}
+
+/* Редактиране на изборна */
+form#elective textarea#description_edit {
+	width: 307px;
+	margin-left: 20px;
+	margin-top: 5px;
+	resize: none;
+	overflow: auto;
+	height: 60px;
+	padding: 10px;
+	border-color: #A9A9A9;
+	margin-bottom: 0px;
+	font-family: arial;
+}
+
+form#elective #name_edit {
+	width: 312px;
+	margin: 10px 20px;
+}
+
+div#elective_edit_messages {
+	/*top: 95%;
+	left: 50%;*/
+	position: absolute;
+	top: 115%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 370px;
+	text-align: center;
+}
+
+/* Добавяне на изборна */
+input[type=radio] {
+	width: 15px;
+	height: 15px;
+	margin-left: 15px;
+}
+
+input[type=number] {
+	width: 65px;
+	height: 20px;
+}
+
+form#elective textarea#description_add {
+	width: 340px;
+	margin-left: 15px;
+	margin-top: 0px;
+	resize: none;
+	overflow: auto;
+	height: 60px;
+	padding: 10px;
+	border-color: #A9A9A9;
+	margin-bottom: 5px;
+	font-family: arial;
+}
+
+form#elective  #name_add {
+	margin: 15px;
+	width: 340px;
+}
+
+form#elective  div {
+	margin: 10px;
+	width: 335px;
+}
+
+label.not_radio {
+	font-family: arial;
+	font-weight: bold;
+	margin-left: 20px;
+	font-size: 13px;
+}
+
+form#elective input[type=submit] {
+	background-color: #97BF0D;
+	color: white;
+	border: 0px;
+	width: 340px;
+	height: 30px;
+	margin-left: 15px;
+	margin-bottom: 15px;
+}
+
+label.radio {
+	font-family: arial;
+	font-size: 13px;
+	height: 15px;
+}
+
+form#elective select {
+	font-family: arial;
+}
